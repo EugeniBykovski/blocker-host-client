@@ -1,3 +1,4 @@
+import { protectedPage } from "@/features/auth";
 import Home from "@/pages/home";
 
-export default Home;
+export default protectedPage(Home);
