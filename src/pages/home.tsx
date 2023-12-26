@@ -1,20 +1,19 @@
 import Header from "@/shared/ui/header";
-import { SignOutButton } from "@/features/auth";
-import { useSessionQuery } from "@/entities/session";
+import { ToggleBlockingButton } from "@/features/toggle-blocking/ui/toggle-blocking-button";
+import { Profile } from "@/widgets/profile";
 
 export default function Home() {
-  const { data } = useSessionQuery();
-
   return (
-    <main className={`min-h-screen`}>
-      <Header
-        right={
-          <div>
-            {data?.email}
-            <SignOutButton />{" "}
-          </div>
-        }
-      />
-    </main>
+    <div className={`min-h-screen flex flex-col`}>
+      <Header right={<Profile />} />
+
+      <div className="grid grid-cols-[200px_1fr]">
+        <aside className="px-5">
+          <ToggleBlockingButton />
+        </aside>
+
+        <main>block list</main>
+      </div>
+    </div>
   );
 }

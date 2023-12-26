@@ -5,7 +5,7 @@ type ButtonVariants = "primary" | "secondary" | "outline";
 
 export type ButtonProps = {
   variant: ButtonVariants;
-} & ButtonHTMLAttributes<HTMLButtonElement>;
+} & ButtonHTMLAttributes<HTMLButtonElement>; // наследует все пропсы от обычной кнопки
 
 const Button: FC<ButtonProps> = ({ className, variant, ...props }) => {
   return (
