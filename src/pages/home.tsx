@@ -1,6 +1,7 @@
 import Header from "@/shared/ui/header";
 import { ToggleBlockingButton } from "@/features/toggle-blocking/ui/toggle-blocking-button";
 import { Profile } from "@/widgets/profile";
+import { AddBlockItemForm, BlockList } from "@/features/block-list";
 
 export default function Home() {
   return (
@@ -12,7 +13,11 @@ export default function Home() {
           <ToggleBlockingButton />
         </aside>
 
-        <main>block list</main>
+        <main className="pt-10 px-5">
+          <h1 className="text-2xl mb-8">Block List</h1>
+          <AddBlockItemForm />
+          <BlockList className="mt-3" />
+        </main>
       </div>
     </div>
   );
